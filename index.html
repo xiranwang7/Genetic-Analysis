@@ -192,6 +192,7 @@ summary {
 <p>This work shows the statistical analysis on sloving some genetic problems, such as detecting Mendelian Inconsistency due to potential genotyping error in every genetic marker for every offspring, performing gene association test using the cleaned genotype data generated from offspring, and identifing genetic markers that are associated with weight adjusting for faid and sex.</p>
 <div id="setup-dataset" class="section level3">
 <h3>1 Setup Dataset</h3>
+<p>Dataset is avaliable at <a href="https://github.com/xiranwang7/Genetic-Analysis" class="uri">https://github.com/xiranwang7/Genetic-Analysis</a>.</p>
 <p>Data Description:<br />
 faid: Father’s ID (0 indicates founder)<br />
 moid: Mother’s ID (0 indicates founder)<br />
@@ -200,9 +201,10 @@ sex: M: male, F: Female<br />
 weight: weight<br />
 m11: the first allele in m1 marker<br />
 m12: the second allele in m1 marker<br />
-<em>Assume parents’ genotypes are correct.</em><br />
 </p>
 <pre class="r"><code>hdata &lt;- read.table(file=&quot;hdata.txt&quot;, header=T, sep='\t')
+
+# Assume parents' genotypes are correct
 
 kable(hdata) %&gt;%
   kable_styling( ) %&gt;%
