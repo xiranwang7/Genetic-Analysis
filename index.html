@@ -189,7 +189,7 @@ summary {
 </div>
 
 
-<p>This work shows the statistical analysis on sloving some genetic problems, such as detecting Mendelian Inconsistency due to potential genotyping error in every genetic marker for every offspring, performing gene association test using the cleaned genotype data generated from offspring, and identifing genetic markers that are associated with weight adjusting for faid and sex.</p>
+<p>This work shows the statistical analysis on sloving some genetic problems, such as detecting the Mendelian Inconsistency due to potential genotyping error in every genetic marker for every offspring, performing gene association test using the cleaned genotype data generated from offspring, and identifing genetic markers that are associated with weight adjusted for faid and sex.</p>
 <div id="setup-dataset" class="section level3">
 <h3>1 Setup Dataset</h3>
 <p>Dataset is avaliable at <a href="https://github.com/xiranwang7/Genetic-Analysis" class="uri">https://github.com/xiranwang7/Genetic-Analysis</a>.</p>
@@ -53174,7 +53174,7 @@ M2 _ M4
 </div>
 <div id="investigate-plots" class="section level3">
 <h3>4.1 Investigate plots</h3>
-<p>Two plots show the relationships for children’s weight against different father ids and weight against children’s sex. Based on graph, there are possible variations for weight among different father ids and children’s sex.</p>
+<p>The two plots below show the relationships for children’s weight against different paternal ids and weight against children’s sex. Based on the graph, there are some possible variations for weight among different father ids and children’s sex.</p>
 <pre class="r"><code>par(mfrow=c(2,2))
 ## Plot shows that there are differences in weight for different father id and sex. 
 plot(factor(sort_consistency$faid),sort_consistency$weight,col=2:11, 
@@ -53185,7 +53185,7 @@ plot(sort_consistency$sex, sort_consistency$weight,col=c(&quot;pink&quot;, &quot
 </div>
 <div id="investigate-more-by-fitting-a-linear-regresion" class="section level3">
 <h3>4.2 Investigate more by fitting a linear regresion</h3>
-<p>Tired to fit M1-M5 with faid and sex, based on p-vlaue for each valiable, M5 is genetic markers that are associated with weight adjusting for faid and sex.In addition, based on summary(fitM5), M1 allele in M5 marker increases weight, so it is apporiate to make a dummy variable for ensuring this. Based on fitM5M1,M1 in M5 marker increases weight by 15.7683 on average, hold the other variables unchange.</p>
+<p>Fit M1-M5 with faid and sex, based on p-vlaue for each valiable, M5 is genetic markers that are associated with weight adjusted for faid and sex. In addition,from the results of summary(fitM5), the M1 allele in M5 marker increases weight, so it is apporiate to make a dummy variable for ensuring this. Based on fitM5M1, holding other variables constant, the M1 in the M5 marker increases weight by 15.7683 on average.</p>
 <pre class="r"><code>fitM5 &lt;- lm(weight ~ factor(faid) + factor( sex)+ M5, data = sort_consistency)
 summary(fitM5)</code></pre>
 <pre><code>## 
